@@ -1,16 +1,66 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Layout from '../layouts/Layout.astro'; 
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-	
-		<h1>Welcome to <span class="text-gradient">Astro Project</span></h1>
-		
-	</main>
+<Layout title="Korrektur Kumpel Project" description="Explore the visual journey of Korrektur Kumpel">
+  <main class="flex flex-col items-center justify-center min-h-screen text-center space-y-8 p-8 bg-light-green">
+    
+    <!-- Hero Section: Company Name and Slogan -->
+    <header class="space-y-4">
+      <h1 class="text-5xl font-extrabold text-gradient mb-4">
+        Welcome to <span class="text-green-dark">Korrektur Kumpel</span>
+      </h1>
+      <p class="text-lg text-neutral mb-8 max-w-3xl">
+        So that your after-work time is really yours. Explore our innovative tool designed to reduce the workload for teachers, giving them more freedom.
+      </p>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="bg-white p-6 rounded-lg shadow-lg max-w-3xl">
+      <h2 class="text-2xl font-bold mb-4">Who We Are </h2>
+      <p class="text-gray-700 leading-relaxed">
+        We are a motivated team from fields such as IT, project management, business informatics, cloud computing, web development, and pedagogy. Our diverse skills help us create innovative and practical solutions for the digitalization of education.
+      </p>
+    </section>
+
+
+
+
+
+    <!-- Call-to-Action Button -->
+    <a href="/slideshow" class="px-6 py-3 bg-green-mid text-white rounded-lg shadow-lg hover:bg-green-dark transition-transform transform hover:scale-105">
+			Explore Our Journey
+    </a>
+
+
+
+  </main>
 </Layout>
 
 <style>
-	
+.text-gradient,h2 {
+  background: linear-gradient(90deg, #16423C, #6A9C89);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.text-green-dark {
+  color: #16423C;
+}
+
+.bg-light-green {
+  background-color: #E9EFEC;
+}
+
+.bg-green-mid {
+  background-color: #6A9C89;
+}
+
+.bg-green-dark {
+  background-color: #16423C;
+}
+
+.text-neutral {
+  color: #16423C;
+}
 </style>

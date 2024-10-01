@@ -1,28 +1,45 @@
 ---
 interface Props {
-	title: string;
-	description?:string;
-	image?:string;
+  title: string;
+  description?: string;
 }
 
-const { title,description = "Astro Project",image } = Astro.props;
+const { title, description = "Welcome to the Korrektur Kumpel " } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description}/>
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta property="og:image" content={image} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
-<style >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/fonts/apple-touch-icon.png" />
 
-</style>
+    <style>
+      @font-face {
+        font-family: 'Poppins';
+        src: url('/fonts/Poppins-Regular.woff2') format('woff2'),
+                url('/fonts/Poppins-Regular.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Poppins';
+        src: url('/fonts/Poppins-Bold.woff2') format('woff2'),
+      url('/fonts/Poppins-Regular.ttf') format('woff');
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      /* Apply Poppins as the global font */
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <slot /> 
+  </body>
+</html>
