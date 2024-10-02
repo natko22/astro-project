@@ -2,27 +2,35 @@
 import Layout from '../layouts/Layout.astro'; 
 import Header from '../components/Header.astro';
 import Slideshow from '../components/Slideshow';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Korrektur Kumpel Slideshow" description="Explore our visual journey at Korrektur Kumpel">
   <!-- Header Component -->
   <Header />
 
-  <main class="p-10 space-y-8">
+  <!-- Flexbox layout on main for sticky footer -->
+  <main class="flex flex-col justify-between min-h-screen">
     <!-- Page Header and Text Introduction -->
-    <header class="text-center space-y-4">
-      <h2 class="text-4xl font-extrabold text-green-dark">Explore Our Journey</h2>
+    <header class="text-center space-y-8 py-20"> 
+      <h2 class="text-4xl font-extrabold text-green-dark mt-8"> 
+        Explore Our Journey
+      </h2>
       <p class="text-lg text-gray-600">
         Take a visual tour through our journey and milestones with these dynamic images from Korrektur Kumpel.
       </p>
     </header>
 
-    <!-- Slideshow Section -->
-    <section class="flex justify-center items-center ">
-      <div class="w-full max-w-5xl mx-auto">
-        <Slideshow />
-      </div>
-    </section>
+  <!-- Slideshow Section -->
+<section class="flex justify-center items-center "> 
+  <div class="w-full max-w-5xl mx-auto">
+    <Slideshow />
+  </div>
+</section>
+
+
+    <!-- Footer Component -->
+    <Footer />
   </main>
 </Layout>
 
@@ -34,4 +42,6 @@ import Slideshow from '../components/Slideshow';
 .text-gray-600 {
   color: #4B5563;
 }
+
+
 </style>

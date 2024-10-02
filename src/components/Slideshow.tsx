@@ -13,7 +13,7 @@ const ContinuousScrollingSlideshow: React.FC = () => {
   const doubledImages = [...images,...images]; 
 
   return (
-    <div className="relative w-full overflow-hidden mt-20">
+    <div className="relative w-full overflow-hidden h-60">
       <div className="flex animate-marquee space-x-2 whitespace-no-wrap ">
         {doubledImages.map((src, index) => (
           <div key={index} className="flex-shrink-0 w-full max-w-xs">
