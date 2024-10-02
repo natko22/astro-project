@@ -7,26 +7,24 @@ import Layout from '../layouts/Layout.astro';
     
     <!-- Hero Section: Company Name and Slogan -->
     <header class="space-y-4">
-      <h1 class="text-5xl font-extrabold text-gradient mb-4">
+      <h1 class="text-5xl font-extrabold text-gradient mb-4 animate-fadeInDown">
         Welcome to <span class="text-green-dark">Korrektur Kumpel</span>
       </h1>
-      <p class="text-lg text-neutral mb-8 max-w-3xl">
+      <p class="text-lg text-neutral mb-8 max-w-3xl animate-fadeInUp">
         So that your after-work time is really yours. Explore our innovative tool designed to reduce the workload for teachers, giving them more freedom.
       </p>
     </header>
 
-    <!-- Introduction Section -->
-    <section class="bg-white p-6 rounded-lg shadow-lg max-w-3xl">
-      <h2 class="text-2xl font-bold mb-4">Who We Are </h2>
-      <p class="text-gray-700 leading-relaxed">
-        We are a motivated team from fields such as IT, project management, business informatics, cloud computing, web development, and pedagogy. Our diverse skills help us create innovative and practical solutions for the digitalization of education.
-      </p>
+    <section>
+      <img src="/images/home-image.webp" alt="Education and Technology" class="w-full max-w-3xl rounded-lg shadow-lg animate-fadeIn" />
     </section>
 
-    <!-- Call-to-Action Button -->
-		<a href="/explore" class="px-6 py-3 bg-green-mid text-white rounded-lg shadow-lg transition-transform transform hover:scale-105">
-			Explore Our Journey
-		</a>
+  
+
+    <!-- Call-to-Action Button  -->
+    <a href="/explore" class="px-10 py-3 bg-green-mid text-white rounded-lg shadow-lg transition-transform transform hover:scale-105 ">
+      Explore Our Journey
+    </a>
 		
   </main>
 </Layout>
@@ -47,7 +45,7 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .bg-green-mid {
-  background-color: #6A9C89;
+  background-color: #577a6c;
 }
 
 .bg-green-dark {
@@ -56,5 +54,37 @@ import Layout from '../layouts/Layout.astro';
 
 .text-neutral {
   color: #16423C;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
 }
 </style>
