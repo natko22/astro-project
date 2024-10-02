@@ -4,22 +4,44 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Contact Us" description="Get in touch with us">
   <!-- Main Content Area -->
-  <main class="flex flex-col justify-items-start items-center min-h-screen pt-40">
+  <main class="flex flex-col justify-center items-center min-h-screen pt-10 bg-gradient-to-r from-green-300 via-green-200 to-green-100">
 
     <!-- Page Title -->
-    <h1 class="text-4xl font-extrabold text-green-dark mb-6 text-center">Contact Us</h1>
-    
-    <!-- Main Content -->
-    <p class="text-lg text-gray-600 leading-relaxed max-w-4xl text-center">
-      We would love to hear from you! Reach out to us for any questions, feedback, or inquiries.
-    </p>
+    <h1 class="text-4xl font-extrabold text-green-dark mb-8 text-center animate-fadeIn">Contact Us</h1>
+
+    <!-- Contact Info Section with Icons -->
+    <div class="flex flex-col items-center space-y-4 mb-12">
+      <p class="text-lg text-gray-600 leading-relaxed max-w-4xl text-center">
+        We would love to hear from you! Reach out to us for any questions, feedback, or inquiries.
+      </p>
+      <div class="flex space-x-6 text-gray-600 text-2xl">
+        <a href="mailto:info@korrekturkumpel.com" class="hover:text-green-800">
+          📧 info@korrekturkumpel.com
+        </a>
+        <a href="tel:+123456789" class="hover:text-green-800">
+          📞 +123 456 789
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
+      <form action="#" method="POST" class="flex flex-col space-y-4">
+        <input type="text" name="name" placeholder="Your Name" required class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+        <input type="email" name="email" placeholder="Your Email" required class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+        <textarea name="message" placeholder="Your Message" rows="4" required class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+        
+        <!-- Button to submit form -->
+        <button type="submit" class="py-2 px-4 bg-green-dark text-white rounded-md transform transition-transform hover:scale-105">
+          Send Message
+        </button>
+      </form>
+    </div>
 
   </main>
 </Layout>
 
 <style>
-
-
   .text-green-dark {
     color: #16423C;  
   }
@@ -28,7 +50,29 @@ import Layout from '../layouts/Layout.astro';
     color: #4B5563;  
   }
 
-  .pt-20 {
-    padding-top: 5rem; 
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .animate-slideInUp {
+    animation: slideInUp 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+
+
+  .bg-green-dark {
+    background-color: #16423C;  
+  }
+
+  .bg-gradient-to-r {
+    background-image: linear-gradient(to right, #70a18e, #C4DAD2, #E9EFEC);
   }
 </style>
