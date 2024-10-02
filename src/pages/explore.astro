@@ -1,15 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro'; 
-import Header from '../components/Header.astro';
 import Slideshow from '../components/Slideshow';
-import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Korrektur Kumpel Slideshow" description="Explore our visual journey at Korrektur Kumpel">
-  <!-- Header Component -->
-  <Header />
 
-  <!-- Flexbox layout on main for sticky footer -->
+
   <main class="flex flex-col justify-between min-h-screen">
     <!-- Page Header and Text Introduction -->
     <header class="text-center space-y-8 py-20"> 
@@ -29,8 +25,7 @@ import Footer from '../components/Footer.astro';
 </section>
 
 
-    <!-- Footer Component -->
-    <Footer />
+ 
   </main>
 </Layout>
 

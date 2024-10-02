@@ -1,10 +1,13 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = "Welcome to the Korrektur Kumpel " } = Astro.props;
+const { title, description = "Welcome to Korrektur Kumpel" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -14,25 +17,29 @@ const { title, description = "Welcome to the Korrektur Kumpel " } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/fonts/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/public/fonts/apple-touch-icon.png" />
 
     <style>
-
-
       @font-face {
         font-family: 'Poppins';
         src: url('/fonts/Poppins-Regular.ttf') format('woff2');
-        font-weight: 700;
+        font-weight: normal;
         font-style: normal;
       }
 
-      /* Apply Poppins as the global font */
       body {
         font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
       }
     </style>
   </head>
   <body class="bg-gray-100 text-gray-900">
-    <slot /> 
+    
+    <!-- Global Header/Nav -->
+    <Header />
+      <slot />
+    <!-- Global Footer -->
+    <Footer />
   </body>
 </html>
