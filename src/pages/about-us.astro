@@ -6,24 +6,63 @@ import Layout from '../layouts/Layout.astro';
   <!-- Main Content Area -->
   <main class="flex flex-col justify-items-start items-center min-h-screen pt-40">
 
-    <!-- Page Title -->
-    <h1 class="text-4xl font-bold mb-6 text-center">About Us</h1>
-    
-    <!-- Main Content -->
-    <p class="text-lg text-gray-600 leading-relaxed max-w-4xl text-center">
-      Welcome to Korrektur Kumpel! We are a dedicated team focused on providing excellent correction services.
-      Our journey began with a simple mission: to help people communicate more effectively.
-    </p>
+    <!-- Simple Page Title  -->
+    <section class="text-center mb-10">
+      <h1 class="text-5xl font-extrabold text-green-dark">About Us</h1>
+      <p class="text-lg mt-2 text-gray-600">Discover our mission and values at Korrektur Kumpel</p>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section class="w-full max-w-4xl text-center mb-12">
+      <h2 class="text-3xl font-bold mb-6 text-green-dark">Our Mission</h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Our mission is to help teachers deliver objective, high-quality feedback without additional workload.
+      </p>
+
+      <h2 class="text-3xl font-bold mb-6 text-green-dark">Our Vision</h2>
+      <p class="text-lg text-gray-600">
+        We envision a world where teachers can focus more on their students' growth, while modern AI technologies assist with feedback and corrections.
+      </p>
+    </section>
+
+    <!-- Team Section: Showcasing Team Members -->
+    <section class="w-full max-w-5xl px-6 mb-20">
+      <h2 class="text-3xl font-bold mb-8 text-center text-green-dark">Meet Our Team</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Team Member -->
+        <div class="bg-white shadow-md rounded-lg p-6 text-center">
+          <img src="/images/team-member1.jpg" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-4">
+          <h3 class="text-xl font-bold mb-2">Jane Smith</h3>
+          <p class="text-gray-600">CEO & Founder</p>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg p-6 text-center">
+          <img src="/images/tam-member3.png" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-4">
+          <h3 class="text-xl font-bold mb-2">John Paul</h3>
+          <p class="text-gray-600">Lead Developer</p>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg p-6 text-center">
+          <img src="/images/team-member2.png" alt="Team Member" class="w-24 h-24 rounded-full mx-auto mb-4">
+          <h3 class="text-xl font-bold mb-2">Sarah Johnson</h3>
+          <p class="text-gray-600">Product Manager</p>
+        </div>
+      </div>
+    </section>
 
   </main>
 </Layout>
 
 <style>
-  .pt-20 {
-    padding-top: 5rem; 
+  .text-green-dark {
+    color: #16423C;  
   }
 
   .text-gray-600 {
-    color: #4B5563; 
+    color: #4B5563;  
+  }
+
+  .bg-none {
+    background: none;
   }
 </style>
