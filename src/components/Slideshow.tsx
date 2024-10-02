@@ -3,10 +3,10 @@ import React from 'react';
 const ContinuousScrollingSlideshow: React.FC = () => {
 
   const images = [
-    '/images/image1.svg',
-    '/images/image2.svg',
-    '/images/image3.png',
-    '/images/image4.svg',
+    '/images/slide/image1.svg',
+    '/images/slide/image2.svg',
+    '/images/slide/image3.png',
+    '/images/slide/image4.svg',
   ];
 
   // Duplicate images array to create a seamless loop

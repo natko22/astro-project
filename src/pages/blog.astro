@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Fetch all blog posts
+const blogPosts = await getCollection('posts');
+---
+
+<Layout title="Blog" description="Latest blog posts from Korrektur Kumpel">
+  <main class="flex flex-col items-center min-h-screen py-20">
+    <!-- Page Title -->
+    <section class="text-center mb-16">
+      <h1 class="text-5xl font-extrabold text-green-dark mb-4">Our Blog</h1>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">Stay updated with the latest news, tips, and insights from Korrektur Kumpel.</p>
+    </section>
+
+    <!-- Blog Post Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-6 w-full max-w-6xl">
+      {blogPosts.map((post) => (
+        <article class="bg-white shadow-md rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-lg">
+          <!-- Display post image -->
+          <img src={post.data.image.url} alt={post.data.image.alt} class="w-full h-30 object-fit-cover" />
+          <div class="p-6">
+            <!-- Display post title and description -->
+            <h3 class="text-2xl font-bold text-green-dark mb-2">{post.data.title}</h3>
+            <p class="text-gray-600 mb-4">{post.data.description}</p>
+            <!-- Link to the individual post page -->
+            <a href={`/blog/${post.slug}`} class="text-green-700 hover:text-green-700 font-semibold">Read More &rarr;</a>
+          </div>
+        </article>
+      ))}
+    </section>
+  </main>
+</Layout>
+
+<style>
+.text-green-dark {
+  color: #16423C;
+}
+
+.text-gray-600 {
+  color: #4B5563;
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.hover\:shadow-lg:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+</style>

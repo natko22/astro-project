@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// Define `getStaticPaths` to generate the routes for all blog posts
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug }, // Slug corresponds to the URL path
+  }));
+}
+
+// Get the slug from the URL
+const { slug } = Astro.params;
+
+// Fetch all posts from the 'posts' collection
+const blogPosts = await getCollection('posts');
+
+// Find the specific blog post that matches the slug
+const post = blogPosts.find((p) => p.slug === slug);
+
+if (!post) {
+  throw new Error(`Post not found for slug: ${slug}`);
+}
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+  <main class="prose mx-auto py-20 px-4 min-h-screen">
+    <!-- Blog Post Header -->
+    <article class="max-w-3xl mx-auto text-center">
+      <!-- Post Title -->
+      <h1 class="text-4xl font-bold mb-4 text-green-dark">{post.data.title}</h1>
+      <!-- Publication Date -->
+      <p class="text-gray-600 mb-6">Published on {new Date(post.data.pubDate).toLocaleDateString()}</p>
+      <!-- Post Image -->
+      {post.data.image && (
+        <img src={post.data.image.url} alt={post.data.image.alt} class="w-full h-80 object-fit-cover mb-8 rounded-lg shadow-md" />
+      )}
+      <!-- Blog Post Body Content -->
+      <div class="text-left leading-relaxed text-gray-700">
+        {post.body}
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+.text-green-dark {
+  color: #16423C;
+}
+
+.prose {
+  max-width: 100%; 
+  line-height: 1.75; 
+  font-size: 1.125rem;
+}
+
+img {
+  border-radius: 0.5rem; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.text-gray-600 {
+  color: #4B5563;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+</style>
