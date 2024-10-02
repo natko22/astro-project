@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'; 
 import Header from '../components/Header.astro';
+import Slideshow from '../components/Slideshow';
 ---
 
 <Layout title="Korrektur Kumpel Slideshow" description="Explore our visual journey at Korrektur Kumpel">
@@ -16,7 +17,12 @@ import Header from '../components/Header.astro';
       </p>
     </header>
 
-
+    <!-- Slideshow Section -->
+    <section class="flex justify-center items-center ">
+      <div class="w-full max-w-5xl mx-auto">
+        <Slideshow />
+      </div>
+    </section>
   </main>
 </Layout>
 
