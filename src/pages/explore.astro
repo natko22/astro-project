@@ -9,8 +9,8 @@ import Slideshow from '../components/Slideshow';
   <main class="flex flex-col justify-between min-h-screen">
 
     <!-- Page Header and Text Introduction -->
-    <header class="text-center space-y-8 py-16"> 
-      <h2 class="text-4xl font-extrabold text-green-dark mt-8"> 
+    <header class="text-center space-y-8 py-16">
+      <h2 class="text-4xl font-extrabold text-green-dark mt-8">
         Explore Our Journey
       </h2>
       <p class="text-lg text-gray-600">
@@ -18,9 +18,9 @@ import Slideshow from '../components/Slideshow';
       </p>
     </header>
 
-    <!-- Slideshow Section -->
+    <!-- Slideshow Section  -->
     <section class="flex flex-grow justify-center items-center -mt-40">
-      <div class="w-full max-w-5xl mx-auto">
+      <div class="relative w-full max-w-5xl mx-auto p-6 rounded-lg shadow-xl bg-gradient-to-r from-transparent via-white to-transparent backdrop-blur-sm">
         <Slideshow />
       </div>
     </section>
@@ -29,11 +29,8 @@ import Slideshow from '../components/Slideshow';
 </Layout>
 
 <style>
-.text-green-dark {
-  color: #16423C;
-}
+  .text-green-dark {
+    color: #16423C;
+  }
 
-.text-gray-600 {
-  color: #4B5563;
-}
 </style>
