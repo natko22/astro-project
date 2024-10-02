@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-// Define `getStaticPaths` to generate the routes for all blog posts
+// Define `getStaticPaths` to fetch all posts
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   return posts.map((post) => ({
@@ -16,16 +16,19 @@ const { slug } = Astro.params;
 // Fetch all posts from the 'posts' collection
 const blogPosts = await getCollection('posts');
 
-// Find the specific blog post that matches the slug
+// Find the blog post that matches the slug
 const post = blogPosts.find((p) => p.slug === slug);
 
 if (!post) {
   throw new Error(`Post not found for slug: ${slug}`);
 }
+
+// Ensure the Markdown body is rendered into HTML
+const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
-  <main class="prose mx-auto py-20 px-4 min-h-screen">
+  <main class="prose prose-lg mx-auto py-20 px-4">
     <!-- Blog Post Header -->
     <article class="max-w-3xl mx-auto text-center">
       <!-- Post Title -->
@@ -34,11 +37,11 @@ if (!post) {
       <p class="text-gray-600 mb-6">Published on {new Date(post.data.pubDate).toLocaleDateString()}</p>
       <!-- Post Image -->
       {post.data.image && (
-        <img src={post.data.image.url} alt={post.data.image.alt} class="w-full h-80 object-fit-cover mb-8 rounded-lg shadow-md" />
+        <img src={post.data.image.url} alt={post.data.image.alt} class="w-full h-60 object-cover mb-8 rounded-lg shadow-md" />
       )}
-      <!-- Blog Post Body Content -->
+      <!-- Blog Post Body Content (Markdown) -->
       <div class="text-left leading-relaxed text-gray-700">
-        {post.body}
+        <Content /> 
       </div>
     </article>
   </main>
@@ -46,7 +49,11 @@ if (!post) {
 
 <style>
 .text-green-dark {
-  color: #16423C;
+  color: #16423C;  
+}
+
+.text-gray-600 {
+  color: #4B5563;  
 }
 
 .prose {
@@ -55,9 +62,18 @@ if (!post) {
   font-size: 1.125rem;
 }
 
-img {
+.prose img {
   border-radius: 0.5rem; 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  margin-bottom: 1.5rem; 
+}
+
+img {
+  border-radius: 0.5rem; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .text-gray-600 {
