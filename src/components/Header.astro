@@ -10,25 +10,61 @@
       </a>
     </div>
 
-    <!-- Right Side: Navigation Links -->
-    <nav>
-      <ul class="flex space-x-6">
-        <li>
-          <a href="/" class="link-style">Home</a>
-        </li>
-        <li>
-          <a href="/explore" class="link-style">Explore</a>
-        </li>
-        <li>
-          <a href="/about-us" class="link-style">About Us</a>
-        </li>
-        <li>
-          <a href="/blog" class="link-style">Blog</a>
-        </li>
-      </ul>
-    </nav>
+ <!-- Hamburger menu button -->
+ <button id="menu-btn" class="block lg:hidden absolute right-4 top-4 ">
+  <div class="relative h-6 w-6">
+    <!-- Hamburger Menu Icon -->
+    <img id="open-icon" src="/images/toggle-menu.svg" alt="Toggle menu icon" class=" inset-0 h-6 w-6 text-gray-600" />
+
+    <!-- X (Close) Icon  -->
+    <img id="close-icon" src="/images/x-icon.png" alt="Close menu icon" class=" inset-0 h-6 w-6 text-gray-600 hidden" />
+  </div>
+</button>
+
+
+
+
+  <!-- Right Side: Navigation Links -->
+<nav id="menu" class="hidden lg:flex flex-col lg:flex-row lg:space-x-6 transition-all duration-300 ease-in-out p-6   lg:p-0     ">
+  <ul class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:space-x-6 ">
+    <li>
+      <a href="/" class="link-style">Home</a>
+    </li>
+    <li>
+      <a href="/explore" class="link-style">Explore</a>
+    </li>
+    <li>
+      <a href="/about-us" class="link-style">About Us</a>
+    </li>
+    <li>
+      <a href="/blog" class="link-style">Blog</a>
+    </li>
+  </ul>
+</nav>
+
   </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    const openIcon = document.getElementById('open-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+  
+    menuBtn?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');  // Show/hide the menu
+      openIcon?.classList.toggle('hidden');  // Toggle the hamburger icon
+      closeIcon?.classList.toggle('hidden');  // Toggle the X (close) icon
+
+    });
+  });
+  </script>
+  
+
+
+
 
 <style>
 .link-style {
@@ -52,4 +88,6 @@
   background-color: #e5ebe847;
   backdrop-filter: blur(8px); 
 }
+
+
 </style>
