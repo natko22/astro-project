@@ -67,7 +67,8 @@ The project includes a toggle menu that ensures a smooth transition from desktop
 
 ### 🌐 Live Demo
 
-[Korrektur Kumpel ](https://korrekturkumpel.netlify.app/)
+<a href="https://korrekturkumpel.netlify.app" target="_blank">Korrektur Kumpel </a>
+
 
 
 
