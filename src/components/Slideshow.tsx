@@ -14,6 +14,7 @@ const ContinuousScrollingSlideshow: React.FC = () => {
       <Marquee
         speed={60}
         gradient={false}
+        direction="left"
         pauseOnHover={true}
         loop={0}
         className="space-x-2"
