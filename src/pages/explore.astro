@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'; 
 import Slideshow from '../components/Slideshow';
+
 ---
 
 <Layout title="Korrektur Kumpel Slideshow" description="Explore our visual journey at Korrektur Kumpel">
@@ -21,7 +22,7 @@ import Slideshow from '../components/Slideshow';
     <!-- Slideshow Section  -->
     <section class="flex flex-grow justify-center items-center -mt-40">
       <div class="relative w-full max-w-5xl mx-auto p-6 rounded-lg shadow-xl bg-gradient-to-r from-transparent via-white to-transparent backdrop-blur-sm">
-        <Slideshow />
+        <Slideshow client:only="react"  />
       </div>
     </section>
 
